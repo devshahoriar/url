@@ -14,7 +14,9 @@ This is made by Shuvo with 💝💝\
 \
 \
 \
-[it is hosted on heruko](https://www.example.com)
+[it is hosted on heruko](https://url-shorte-ner.herokuapp.com/)  🔗🔗
+\
+\
 ![alt text](./img/site.png)
 
 ## Have a nice day! 😊
