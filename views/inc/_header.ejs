@@ -1,0 +1,23 @@
+<div class="container">
+  <header>
+    <div class="logo">
+      <p>SHORT</p>
+    </div>
+    <div class="navBar">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+
+          <% if (locals.user) { %>
+
+          <li><a href="/user/dashboard">Dashboard</a></li>
+          <li><a href="/user/logout">Log Out</a></li>
+          <% } else { %>
+          <li><a href="/user/login">Log In</a></li>
+          <li><a href="/user/regs">Regstrar</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>

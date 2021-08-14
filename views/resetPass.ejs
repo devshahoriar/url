@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <!-- navbar -->
+      <%- include('inc/_header'); -%>
+      <!-- navbar sara -->
+
+      <!-- home body -->
+      <div class="container">
+        <div class="homeFrom">
+          <div class="resetPassImg">
+            <img src="../../img/resetpass.png" alt="user img" />
+          </div>
+          <h1>Enter your password</h1>
+          <p style="margin-top: 5px; font-weight: bold;">We send you password reset instraction.</p>
+          <form action="/user/reset/pass" method="post">
+             
+            <input
+              class="urlInput"
+              name="email"
+              value="<%= email %>"
+              required
+              readonly
+              type="email"
+              placeholder="Your email"
+            />
+            <input
+              class="urlInput"
+              name="tocken"
+              value="<%= code %>"
+              required
+              readonly
+              type="number"
+              placeholder="Tocken"
+            />
+            <input
+              class="urlInput"
+              name="pass"
+              value=""
+              required
+              type="password"
+              placeholder="New Password"
+            />
+            <input
+              class="urlInput"
+              name="repass"
+              value=""
+              required
+              type="password"
+              placeholder="Reenter your password"
+            />
+            <input class="subBtn" type="submit" value="Reset" />
+          </form>
+
+          <% if(locals.err) { %>
+          <p class="err"><%= locals.err.massage %></p>
+          <% } %>
+          <% if(locals.succ) { %>
+          <p class="succ"><%= locals.succ.massage %></p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <!-- home body end -->
+  </body>
+</html>

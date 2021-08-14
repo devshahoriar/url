@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet"> 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <!-- navbar -->
+      <%- include('inc/_header'); -%>
+      <!-- navbar sara -->
+
+
+      <!-- home body -->
+      <div class="container">
+        <div class="homeFrom">
+          <div class="imagebox">
+            <img src="img/homepage.png" alt="">
+          </div>
+          <h1>Short your url.</h1>
+          <form action="#" method="post">
+            <input class="urlInput" name="url" required type="url" placeholder="YOUR URL" />
+            <input class="shortUrl" name="sortText" required type="text" placeholder="http://localhost:3000/YOUR-TEXT" />
+            <input class="subBtn" type="submit" title="Send">
+          </form>
+
+          <% if(locals.ok) { %>
+           <p class="succ">Url Aded!</p>
+          <% } %>
+           <!-- locals.url -->
+          <% if(locals.url ) { %>
+           <a class="uir" href=<%= locals.url  %>  target="_blank" rel="noopener noreferrer"><%= locals.url  %></a>
+          <% } %>
+          <% if(locals.err) { %>
+           <p class="err">Short Text found in db!</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <!-- home body end -->
+
+
+  </body>
+</html>

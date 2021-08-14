@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <!-- navbar -->
+      <%- include('inc/_header'); -%>
+      <!-- navbar sara -->
+
+      <!-- home body -->
+      <div class="container">
+        <div class="dashCard">
+
+          
+
+          <% locals.urls.forEach(url => { %>
+           <div class="card">
+            <div class="text">
+              <span>Full url: </span
+              ><a href="<%= url.url %>"><%= url.url %> </a
+              ><br />
+              <span>Short url: </span
+              ><a href="<%= locals.appName %><%= url.sortText %>"><%= locals.appName %><%= url.sortText %></a> <span>(<%= url.count %> visited.)</span>
+            </div>
+            <div class="cardBtn">
+              <a class="delBtn" href="<%= locals.appName %>user/url/<%= url._id %>">Delete</a>
+            </div>
+          </div>
+          <% }) %>
+
+          
+
+          
+
+        </div>
+      </div>
+    </div>
+    <!-- home body end -->
+  </body>
+</html>
