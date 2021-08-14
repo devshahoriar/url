@@ -38,7 +38,7 @@ mongoose
   )
   .then(() => {
     console.log('Db = ok!');
-    app.listen(process.env.PORT, () => {
+    app.listen(80, () => {
       console.log('Server = ok!');
     });
   })
